@@ -429,7 +429,15 @@
           <p>For product information, availability or professional enquiries, send a short request and the appropriate channel can respond.</p>
         </div>
 
-        <form class="request-form" id="requestForm">
+        <form class="request-form" id="requestForm" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Replace only this value with the access key Web3Forms sends to dreyime@gmail.com -->
+          <input type="hidden" name="access_key" value="8465006d-47a6-40cf-9a71-34baa4c8cede" />
+
+          <input type="hidden" name="subject" value="BlueStark Inquiry" />
+          <input type="hidden" name="from_name" value="BlueStark Website" />
+          <input type="hidden" name="redirect" value="https://www.bluestarkonline.com/?submitted=true#request" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off" />
+
           <label>
             Name
             <input type="text" name="name" placeholder="Your name" required />
@@ -441,29 +449,35 @@
           </label>
 
           <label>
+            Email address
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+
+          <label>
             Country
             <input type="text" name="country" placeholder="Country" />
           </label>
 
           <label>
             Product interest
-            <select name="product">
-              <option>Double Instrument Combination Unit</option>
-              <option>Single Instrument Combination Unit</option>
-              <option>Digital Acuity Chart Lite</option>
-              <option>Digital Acuity Chart Premium</option>
-              <option>Visual Field Screener</option>
-              <option>General enquiry</option>
+            <select name="product_interest" required>
+              <option value="">Select product interest</option>
+              <option value="Double Instrument Combination Unit">Double Instrument Combination Unit</option>
+              <option value="Single Instrument Combination Unit">Single Instrument Combination Unit</option>
+              <option value="Digital Acuity Chart Lite">Digital Acuity Chart Lite</option>
+              <option value="Digital Acuity Chart Premium">Digital Acuity Chart Premium</option>
+              <option value="Visual Field Screener">Visual Field Screener</option>
+              <option value="General enquiry">General enquiry</option>
             </select>
           </label>
 
           <label class="full">
             Message
-            <textarea name="message" placeholder="Tell us what you would like to know" rows="4"></textarea>
+            <textarea name="message" placeholder="Tell us what you would like to know" rows="4" required></textarea>
           </label>
 
-          <button class="button primary full" type="submit">Prepare Email Request</button>
-          <p class="form-note">This starter site uses a simple email request. Replace this with your official form endpoint when ready.</p>
+          <button class="button primary full" type="submit">Send BlueStark Inquiry</button>
+          <p class="form-note">Your enquiry will be sent securely to the BlueStark team. Only professional product enquiries should be submitted through this form.</p>
         </form>
       </div>
     </section>
